@@ -7,10 +7,10 @@ import androidx.room.Query
 @Dao
 interface ScheduleDao {
 
-    @Query("SELECT * FROM schedule ORDER BY arrival_time ASC")
+    @Query("SELECT * FROM Schedule ORDER BY arrival_time ASC")
     fun getAll(): Flow<List<Schedule>>
 
-    @Query("SELECT * FROM schedule WHERE airline_name = :name ORDER BY arrival_time ASC")
-    fun getByAirlineName(name: String): Flow<List<Schedule>>
+    @Query("SELECT * FROM Schedule WHERE airline_name = :airlineName ORDER BY arrival_time ASC")
+    fun getByAirlineName(airlineName: String): Flow<List<Schedule>>
 
 }
