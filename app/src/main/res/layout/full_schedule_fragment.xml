@@ -10,29 +10,47 @@
 
     <TextView
         android:id="@+id/airline_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/airline_header"
-        android:textSize="16sp"
+        android:layout_width="129dp"
+        android:layout_height="46dp"
         android:gravity="center_horizontal"
         android:padding="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/airline_header"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@id/arrival_time_header"
-        app:layout_constraintEnd_toStartOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
 
     <TextView
         android:id="@+id/arrival_time_header"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/arrival_time_header"
-        android:textSize="16sp"
+        android:layout_width="132dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="4dp"
         android:gravity="center_horizontal"
         android:padding="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/arrival_time_header"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toEndOf="@id/airline_header"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <TextView
+        android:id="@+id/terminal_header"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:text="@string/terminal_header"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/airline_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

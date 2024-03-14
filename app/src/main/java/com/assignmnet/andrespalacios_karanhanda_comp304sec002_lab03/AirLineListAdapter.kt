@@ -52,6 +52,7 @@ class AirLineAdapter(
         @SuppressLint("SimpleDateFormat")
         fun bind(schedule: Schedule) {
             binding.stopNameTextView.text = schedule.airlineName
+            binding.terminalTextView.text = schedule.terminalNumber
             binding.arrivalTimeTextView.text = SimpleDateFormat(
                 "h:mm a").format(
                 Date(schedule.arrivalTime.toLong() * 1000)
