@@ -17,7 +17,7 @@ import com.assignmnet.andrespalacios_karanhanda_comp304sec002_lab03.databinding.
 class DetailScheduleFragment: Fragment() {
 
     companion object {
-        var STOP_NAME = "airlineName"
+        var AIRLINE_NAME = "airlineName"
     }
 
     private var _binding: DetailScheduleFragmentBinding? = null
@@ -26,7 +26,7 @@ class DetailScheduleFragment: Fragment() {
 
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var stopName: String
+    private lateinit var airLineName: String
 
     private val viewModel: AirLineViewModel by activityViewModels {
         AirLineListViewModelFactory(
@@ -38,7 +38,7 @@ class DetailScheduleFragment: Fragment() {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            stopName = it.getString(STOP_NAME).toString()
+            airLineName = it.getString(AIRLINE_NAME).toString()
         }
     }
 
@@ -61,7 +61,7 @@ class DetailScheduleFragment: Fragment() {
         // and tapping rows won't trigger navigation
         recyclerView.adapter = busStopAdapter
         lifecycle.coroutineScope.launch {
-            viewModel.scheduleForAirlineName(stopName).collect() {
+            viewModel.scheduleForAirlineName(airLineName).collect() {
                 busStopAdapter.submitList(it)
             }
         }
